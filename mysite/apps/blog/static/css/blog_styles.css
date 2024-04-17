@@ -1,0 +1,95 @@
+/* Сброс стандартных стилей */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Основные стили для элементов */
+
+body {
+    font-family: Ubuntu;
+    line-height: 1.6;
+    background: #495056;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+
+header {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    position: fixed;
+    background-color: #7d8387;
+}
+
+header .navbar .logo {
+    font-size: 32px;
+    color: white;
+}
+
+
+/* spacer */
+.spacer {
+    height: 30px;
+}
+
+/* main */
+
+main {
+    margin-top: 30px;
+    padding: 10px 20px;
+}
+
+main a, main h2, main p {
+    color: #FFFFFF;
+}
+
+main .posts {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+main .posts .post-card {
+    width: 400px;
+    margin: 20px;
+    border-radius: 15px;
+    background: #41474c;
+    border: 1px solid black;
+}
+
+main .posts .post-card .post-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px 15px 5px 5px;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+}
+
+main .posts .post-card .text-info {
+    padding: 0px 10px;
+}
+
+main .post-card .post-title:hover {
+    color: #adadad;
+}
+
+/* footer */
+

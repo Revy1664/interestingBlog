@@ -4,18 +4,19 @@
 
 {% block content %}
 	
-	<a href="{% url 'create-post' %}">Create post</a>
-
-	<h1>Posts</h1>
-	{% for post in posts %}
-		<div style="border: 1px solid black; margin: 10px; padding: 5px;">
-			<h2><a href="{% url 'detail-post' post.id %}">{{ post.title }}</a></h2>
-			<p>{{ post.text }}</p>
-
-			<a href="{% url 'update-post' post.id %}">Update</a>
-			<a href="{% url 'delete-post' post.id %}">Delete</a>
-		</div>
-		
-	{% endfor %}
+	<div class="posts">
+		{% for post in posts %}
+			<div class="post-card">
+				{% if post.image %}
+					<a href="{% url 'detail-post' post.id %}"><img class="post-image" src="{{ post.image.url }}" alt="post-image"></a>
+				{% endif %}
+				<div class="text-info">
+					<h2><a class="post-title" href="{% url 'detail-post' post.id %}">{{ post.title }}</a></h2>
+					<p class="post-publication-date">{{ post.publication_date }}</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	
 
 {% endblock content %}
