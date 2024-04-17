@@ -1,15 +1,30 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{% block title %} {% endblock title %}</title>
+	<!-- css -->
+	<link rel="stylesheet" href="{% static 'css/blog_styles.css' %}">
+	<!-- fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
 </head>
 <body>
 	
-	{% block content %}
+	<header>
+		<nav class="navbar">
+			<a class="logo" href="{% url 'index' %}">IntBlog</a>
+		</nav>
+	</header>
+	<div class="spacer">
+
+	</div>
+	<main>
+		{% block content %}
 		
-	{% endblock content %}
+		{% endblock content %}
+	</main>
 
 </body>
 </html>
