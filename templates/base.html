@@ -15,12 +15,14 @@
 	<header>
 		<nav class="navbar">
 			<a class="logo" href="{% url 'index' %}">IntBlog</a>
+			<a class="user" href="#">{{ user }}</a>
 		</nav>
 	</header>
 	<div class="spacer">
 
 	</div>
 	<main>
+		<a class="add-post" href="{% url 'create-post' %}">add post</a>
 		{% block content %}
 		
 		{% endblock content %}

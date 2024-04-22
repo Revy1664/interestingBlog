@@ -7,11 +7,11 @@ class CreatePostForm(forms.ModelForm):
 
 	class Meta:
 		model = Post
-		fields = ["title", "text"]
+		fields = ["title", "text", "image"]
 
 
 class UpdatePostForm(forms.ModelForm):
 
 	class Meta:
 		model = Post
-		fields = ["title", "text"]
+		fields = ["title", "text", "image"]

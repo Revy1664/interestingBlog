@@ -42,6 +42,13 @@ header .navbar .logo {
     color: white;
 }
 
+header .navbar .user {
+    color: #fff;
+    float: right;
+    font-size: 20px;
+    margin: 10px 40px 0px 0px;        
+}
+
 
 /* spacer */
 .spacer {
@@ -89,6 +96,37 @@ main .posts .post-card .text-info {
 
 main .post-card .post-title:hover {
     color: #adadad;
+}
+
+/* detail page */
+
+main .post .post-title {
+    color: #fff;
+    font-size: 48px;
+    text-align: center;    
+}
+
+main .post .post-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 15px 15px 5px 5px;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
+}
+
+main .post .post-info .post-body {
+    width: 100%;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+main .post .post-interact button {
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #adadad;
 }
 
 /* footer */

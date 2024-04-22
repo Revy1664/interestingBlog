@@ -59,18 +59,16 @@ def update_post(request, id):
 	form = UpdatePostForm(instance=post) # get form with previous data inside
 
 	if request.method == "POST":
-		form = UpdatePostForm(request.POST, instance=post)
+		form = UpdatePostForm(request.POST, request.FILES, instance=post)
 		if form.is_valid():
-			title = form.cleaned_data["title"] # get updated post title
-			text = form.cleaned_data["text"] # get updated post text
-			
-			post.title = title # change title 
-			post.text = text # change text
 			post.save() # save updated data
 			
 			return redirect("index") # redirect to page with all posts
 
-	return render(request, "blog/update_post.html", {"form": form})
+	if post.author == request.user:
+		return render(request, "blog/update_post.html", {"form": form})
+	else:
+		return redirect("index")
 
 
 def delete_post(request, id):
@@ -78,6 +76,9 @@ def delete_post(request, id):
 		Page of deleting post
 	"""
 	post = Post.objects.get(id=id) # get post
-	post.delete() # delete post
+
+	if post.author == request.user:
+		post.delete() # delete post
+		return redirect("index") # redirect to page with all posts
 
 	return redirect("index") # redirect to page with all posts
