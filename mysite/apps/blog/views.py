@@ -76,6 +76,9 @@ def delete_post(request, id):
 		Page of deleting post
 	"""
 	post = Post.objects.get(id=id) # get post
-	post.delete() # delete post
+
+	if post.author == request.user:
+		post.delete() # delete post
+		return redirect("index") # redirect to page with all posts
 
 	return redirect("index") # redirect to page with all posts
